@@ -14,13 +14,6 @@ pipeline {
             ])
             sh "echo triggerd by ${BRANCH_NAME}"
           }
-      } post {
-            always {
-                deleteDir()
-            }
-            success {
-                echo "${env.JOB_NAME} successfully triggered by ${BRANCH_NAME}"
-            }
-        }
+      }
     }
 }
