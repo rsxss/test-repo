@@ -12,7 +12,7 @@ pipeline {
                 branches: [[name: '**']],
                 userRemoteConfigs: [[url: 'https://github.com/rsxss/test-repo.git']]
             ]) */
-            sh "echo triggerd by ${BRANCH_NAME}"
+            sh "echo triggered"
           }
       }
     }
