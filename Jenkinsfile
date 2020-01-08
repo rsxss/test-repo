@@ -8,19 +8,12 @@ pipeline {
     stages {
       stage('test') {
           steps {
-              checkout([$class: 'GitSCM',
+             /* checkout([$class: 'GitSCM',
                 branches: [[name: '**']],
                 userRemoteConfigs: [[url: 'https://github.com/rsxss/test-repo.git']]
-            ])
-            sh "echo triggerd by ${BRANCH_NAME}"
+            ]) */
+            sh "echo triggered"
           }
-      } post {
-            always {
-                deleteDir()
-            }
-            success {
-                echo "${env.JOB_NAME} successfully triggered by ${BRANCH_NAME}"
-            }
-        }
+      }
     }
 }
